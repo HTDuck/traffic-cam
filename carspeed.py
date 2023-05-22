@@ -121,7 +121,7 @@ camera.resolution = RESOLUTION
 camera.framerate = FPS
 camera.vflip = True
 camera.hflip = True
-
+camera.rotation = 90
 rawCapture = PiRGBArray(camera, size=camera.resolution)
 # allow the camera to warm up
 time.sleep(0.9)
