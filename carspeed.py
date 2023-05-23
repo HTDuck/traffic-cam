@@ -55,9 +55,9 @@ def draw_rectangle(event,x,y,flags,param):
         cv2.rectangle(image,(ix,iy),(fx,fy),(0,255,0),2)
         
 # define some constants
-DISTANCE = 76  #<---- enter your distance-to-road value here
-MIN_SPEED = 0  #<---- enter the minimum speed for saving images
-SAVE_CSV = False  #<---- record the results in .csv format in carspeed_(date).csv
+DISTANCE = 60  #<---- enter your distance-to-road value here
+MIN_SPEED = 4  #<---- enter the minimum speed for saving images
+SAVE_CSV = True  #<---- record the results in .csv format in carspeed_(date).csv
 
 THRESHOLD = 15
 MIN_AREA = 175
@@ -140,7 +140,7 @@ rawCapture.truncate(0)
 org_image = image.copy()
 
 if SAVE_CSV:
-    csvfileout = "carspeed_{}.cvs".format(datetime.datetime.now().strftime("%Y%m%d_%H%M"))
+    csvfileout = "carspeed_{}.csv".format(datetime.datetime.now().strftime("%Y%m%d_%H%M"))
     record_speed('Date,Day,Time,Speed,Image')
 else:
     csvfileout = ''
